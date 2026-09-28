@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — GYRE</title>
+  <meta name="description" content="GYRE privacy policy: on-device progress and settings only. No accounts, no tracking, no ads.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0f14;
+      --fg: #e8eef6;
+      --muted: #9aa7b8;
+      --card: #121821;
+      --accent: #22d3ee;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 1.75rem;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .meta strong { color: var(--fg); font-weight: 600; }
+    h2 {
+      margin: 2rem 0 0.75rem;
+      font-size: 1.15rem;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+    p, li { color: var(--fg); }
+    ul { padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    a { color: var(--accent); }
+    .summary {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      margin: 1.25rem 0;
+    }
+    .summary ul { margin: 0.5rem 0 0; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.1em 0.35em;
+      border-radius: 4px;
+    }
+    ol { padding-left: 1.25rem; }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Privacy Policy — GYRE</h1>
+      <p class="meta">
+        <strong>Effective / last updated:</strong> 2026-09-28<br>
+        <strong>App:</strong> GYRE (iOS)<br>
+        <strong>Publisher:</strong> Wadevo Studios<br>
+        <strong>Bundle ID:</strong> <code>com.mknaomi2.gyre</code>
+      </p>
+    </header>
+
+    <p>
+      This policy describes what GYRE does with information on your device.
+      GYRE keeps progress and settings on-device only. It does not create accounts,
+      and it does not include analytics or advertising SDKs in the current source.
+    </p>
+
+    <div class="summary">
+      <strong>Summary</strong>
+      <ul>
+        <li>GYRE stores your progress and preferences <strong>on your device only</strong>.</li>
+        <li>GYRE does <strong>not</strong> create accounts or require sign-in.</li>
+        <li>GYRE does <strong>not</strong> include advertising, analytics, crash-reporting, or social SDKs in the current source.</li>
+        <li>GYRE does <strong>not</strong> track you across apps or websites for advertising (privacy manifest: <code>NSPrivacyTracking</code> = false).</li>
+        <li>You can erase local progress from <strong>Settings → Data → Reset Progress</strong>.</li>
+      </ul>
+    </div>
+
+    <h2>What we store on your device</h2>
+    <p>
+      GYRE uses Apple’s <strong>UserDefaults</strong> (declared in <code>PrivacyInfo.xcprivacy</code>
+      with reason <strong>CA92.1</strong>) to keep a small on-device JSON blob that may include:
+    </p>
+    <ul>
+      <li>Stage clear status, stars, best scores / precision records, and cosmetic unlock / loadout choices</li>
+      <li>Feel settings: sound, haptics, reduce flash, reduce motion</li>
+      <li>Related local progression fields needed to resume play after relaunch</li>
+    </ul>
+    <p>
+      This data never leaves your device through GYRE’s own code paths as audited
+      (no <code>URLSession</code> / network client usage found in Sources).
+    </p>
+
+    <h2>What we do not collect</h2>
+    <p>As of the audited source and privacy manifest:</p>
+    <ul>
+      <li>No contact information, location, identifiers for advertising, usage analytics, diagnostics uploads, or purchase history collected by GYRE</li>
+      <li>No account registration, login, or cloud sync</li>
+      <li>Empty <code>NSPrivacyCollectedDataTypes</code> and empty <code>NSPrivacyTrackingDomains</code> in <code>PrivacyInfo.xcprivacy</code></li>
+    </ul>
+    <p>
+      <strong>App Store Connect label:</strong> choose <strong>Data Not Collected</strong>
+      only if the final Release archive still matches this policy.
+      Do not invent network or analytics features to justify other labels.
+    </p>
+
+    <h2>Reset / deletion</h2>
+    <p>There is no cloud account to delete. To remove local game progress:</p>
+    <ol>
+      <li>Open <strong>Settings</strong> in GYRE</li>
+      <li>Under <strong>Data</strong>, tap <strong>Reset Progress</strong> and confirm</li>
+    </ol>
+    <p>
+      Feel settings are intentionally preserved across reset (sound / haptics / accessibility toggles).
+      Uninstalling the app also removes on-device UserDefaults for GYRE.
+    </p>
+
+    <h2>Permissions and system features</h2>
+    <ul>
+      <li><strong>Haptics / sound:</strong> controlled in Settings; no special privacy permission prompts beyond normal AV playback.</li>
+      <li><strong>Reduce Motion:</strong> respects the in-app toggle and, on iOS, the system Reduce Motion preference.</li>
+      <li>GYRE does <strong>not</strong> use App Tracking Transparency (ATT) because it does not track.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>
+      GYRE is a single-player arcade game with no social features and no data collection as described above.
+      Age rating and Kids Category decisions are App Store Connect questionnaire items for the publisher;
+      this policy does not claim Kids Category eligibility by itself.
+    </p>
+
+    <h2>Support and contact</h2>
+    <p>Questions about privacy or the app:</p>
+    <ul>
+      <li><strong>Support:</strong> <a href="mailto:support@wadevo.com">support@wadevo.com</a></li>
+      <li><strong>Privacy:</strong> <a href="mailto:privacy@wadevo.com">privacy@wadevo.com</a></li>
+      <li>In-app: Settings → About links to this policy and a mailto support address.</li>
+    </ul>
+    <p>
+      If you contact us by email, the message content and your email address are processed
+      only to respond to you (ordinary email correspondence, not in-app telemetry).
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      If GYRE later adds networking, accounts, analytics, or other data practices,
+      this policy and the App Store privacy labels will be updated <strong>before</strong>
+      those features ship. Until then, treat “on-device only” as the product rule.
+    </p>
+
+    <footer>
+      © Wadevo Studios · GYRE · Bundle <code>com.mknaomi2.gyre</code>
+    </footer>
+  </main>
+</body>
+</html>
